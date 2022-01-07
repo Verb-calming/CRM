@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,8 +54,8 @@
 				</div>
 				<div class="modal-body">
 					<div style="position: relative; left: 40px;">
-						姓名：<b>张三</b><br><br>
-						登录帐号：<b>zhangsan</b><br><br>
+						姓名：<b>${sessionScope.user.name}</b><br><br>
+						登录帐号：<b>${sessionScope.user.loginAct}</b><br><br>
 						组织机构：<b>1005，市场部，二级部门</b><br><br>
 						邮箱：<b>zhangsan@bjpowernode.com</b><br><br>
 						失效时间：<b>2017-02-14 10:10:10</b><br><br>

@@ -23,6 +23,7 @@
         </environment>
     </environments>
     <mappers>
-        <package name="com.gmu.crm.settings.dao"/>
+        <mapper resource="com/gmu/crm/settings/dao/UserDao.xml"/>
+        <!--<package name="com.gmu.crm.settings.dao"/>-->
     </mappers>
 </configuration>
