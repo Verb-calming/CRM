@@ -7,19 +7,14 @@
 <script type="text/javascript" src="../jquery/jquery-1.11.1-min.js"></script>
 <script type="text/javascript" src="../jquery/bootstrap_3.3.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
 	//页面加载完毕
 	$(function(){
-		
 		//导航中所有文本颜色为黑色
 		$(".liClass > a").css("color" , "black");
-		
 		//默认选中导航菜单中的第一个菜单项
 		$(".liClass:first").addClass("active");
-		
 		//第一个菜单项的文字变成白色
 		$(".liClass:first > a").css("color" , "white");
-		
 		//给所有的菜单项注册鼠标单击事件
 		$(".liClass").click(function(){
 			//移除所有菜单项的激活状态
@@ -31,12 +26,8 @@
 			//当前项目颜色变成白色
 			$(this).children("a").css("color","white");
 		});
-		
-		
 		window.open("main/index.html","workareaFrame");
-		
 	});
-	
 </script>
 
 </head>
@@ -57,9 +48,9 @@
 						姓名：<b>${sessionScope.user.name}</b><br><br>
 						登录帐号：<b>${sessionScope.user.loginAct}</b><br><br>
 						组织机构：<b>1005，市场部，二级部门</b><br><br>
-						邮箱：<b>zhangsan@bjpowernode.com</b><br><br>
-						失效时间：<b>2017-02-14 10:10:10</b><br><br>
-						允许访问IP：<b>127.0.0.1,192.168.100.2</b>
+						邮箱：<b>${sessionScope.user.email}</b><br><br>
+						失效时间：<b>${sessionScope.user.expireTime}</b><br><br>
+						允许访问IP：<b>1${sessionScope.user.allowIps}</b>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -134,12 +125,12 @@
 	
 	<!-- 顶部 -->
 	<div id="top" style="height: 50px; background-color: #3C3C3C; width: 100%;">
-		<div style="position: absolute; top: 5px; left: 0px; font-size: 30px; font-weight: 400; color: white; font-family: 'times new roman'">CRM &nbsp;<span style="font-size: 12px;">&copy;2017&nbsp;动力节点</span></div>
-		<div style="position: absolute; top: 15px; right: 15px;">
+		<div style="position: absolute; top: 5px; left: 0px; font-size: 30px; font-weight: 400; color: white; font-family: 'times new roman'">CRM &nbsp;<span style="font-size: 12px;">&copy;2022&nbsp;Verb-calming</span></div>
+		<div style="position: absolute; top: 15px; right: 35px;">
 			<ul>
 				<li class="dropdown user-dropdown">
 					<a href="javascript:void(0)" style="text-decoration: none; color: white;" class="dropdown-toggle" data-toggle="dropdown">
-						<span class="glyphicon glyphicon-user"></span> zhangsan <span class="caret"></span>
+						<span class="glyphicon glyphicon-user"></span> ${user.name} <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
 						<li><a href="../settings/index.html"><span class="glyphicon glyphicon-wrench"></span> 系统设置</a></li>

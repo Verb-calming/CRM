@@ -16,7 +16,7 @@ public class UserService {
             throw new LoginException("账号密码错误");
         } else {
             String dateStr = DateTimeUtil.getSysTime();
-            if (dateStr.compareTo(user.getExpireTime()) < 0) {
+            if (dateStr.compareTo(user.getExpireTime()) > 0) {
                 throw new LoginException("账号已失效");
             }
             if ("0".equals(user.getLockState())) {
