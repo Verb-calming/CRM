@@ -17,7 +17,7 @@ import java.util.Map;
 public class UserController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getServletPath();
-        if ("/setting/user/login.do".equals(path)) {
+        if ("/settings/user/login.do".equals(path)) {
             login(request,response);
         }
     }
@@ -36,7 +36,7 @@ public class UserController extends HttpServlet {
             e.printStackTrace();
             String msg = e.getMessage();
             Map<String,Object> map = new HashMap<>();
-            map.put("success",false);
+            map.put("succeed",false);
             map.put("msg",msg);
             PrintJson.PrintJsonObj(response,map);
         }

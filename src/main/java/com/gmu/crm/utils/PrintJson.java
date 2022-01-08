@@ -18,7 +18,7 @@ public class PrintJson {
      */
     public static void PrintJsonFlag(HttpServletResponse response,boolean flag) {
         Map<String,Boolean> map = new HashMap<>();
-        map.put("success",flag);
+        map.put("succeed",flag);
         ObjectMapper om = new ObjectMapper();
         try {
             String json = om.writeValueAsString(map);
