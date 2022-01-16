@@ -32,4 +32,22 @@
         <servlet-name>UserController</servlet-name>
         <url-pattern>/settings/user/login.do</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ActiveController</servlet-name>
+        <servlet-class>com.gmu.crm.workbench.web.controller.ActiveController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ActiveController</servlet-name>
+        <url-pattern>/workbench/active/create.do</url-pattern>
+        <url-pattern>/workbench/active/save.do</url-pattern>
+        <url-pattern>/workbench/active/select.do</url-pattern>
+        <url-pattern>/workbench/active/delete.do</url-pattern>
+        <url-pattern>/workbench/active/selectInfo.do</url-pattern>
+        <url-pattern>/workbench/active/update.do</url-pattern>
+        <url-pattern>/workbench/active/detail.do</url-pattern>
+        <url-pattern>/workbench/active/getRemarkInfo.do</url-pattern>
+        <url-pattern>/workbench/active/deleteRemark.do</url-pattern>
+        <url-pattern>/workbench/active/saveRemark.do</url-pattern>
+        <url-pattern>/workbench/active/updateRemark.do</url-pattern>
+    </servlet-mapping>
 </web-app>
