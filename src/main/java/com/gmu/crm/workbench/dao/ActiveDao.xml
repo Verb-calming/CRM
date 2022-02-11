@@ -58,16 +58,37 @@
     </delete>
 
     <select id="getActivityById" resultType="com.gmu.crm.workbench.domain.Activity">
-        select id,owner,name,startDate,endDate,cost,description from tbl_activity where id = #{id}
+        select id,owner,name,startDate,endDate,cost,description from tbl_activity where id=#{id}
     </select>
 
     <update id="updateActive">
         update tbl_activity set
-        owner = #{owner},name = #{name},startDate = #{startDate},endDate = #{endDate},cost = #{cost},description = #{description},editTime = #{editTime},editBy = #{editBy} where id = #{id}
+        owner=#{owner},name=#{name},startDate=#{startDate},endDate=#{endDate},cost=#{cost},description=#{description},editTime=#{editTime},editBy=#{editBy} where id=#{id}
     </update>
 
     <select id="getActivityDetailById" resultType="com.gmu.crm.workbench.domain.Activity">
         select a.id,u.name as owner,a.name,a.startDate,a.endDate,a.cost,a.description,a.createTime,a.createBy,a.editTime,a.editBy
-        from tbl_activity a join tbl_user u on a.owner = u.id where a.id = #{id}
+        from tbl_activity a join tbl_user u on a.owner=u.id where a.id=#{id}
+    </select>
+
+    <select id="showActivityList" resultType="com.gmu.crm.workbench.domain.Activity">
+        select car.id as id,a.name,a.startDate,a.endDate,u.name as owner from tbl_activity a join tbl_user u on a.owner=u.id join tbl_clue_activity_relation car on a.id=car.activityId
+        where car.clueId=#{clueId}
+    </select>
+
+    <select id="selectAllUnLinkedActivity" resultType="com.gmu.crm.workbench.domain.Activity">
+        select a.id,a.name,a.startDate,a.endDate,u.name as owner from tbl_activity a join tbl_user u on a.owner = u.id where a.id not in (select activityId from tbl_clue_activity_relation where clueId=#{clueId})
+    </select>
+
+    <select id="searchName" resultType="com.gmu.crm.workbench.domain.Activity">
+        select a.id,a.name,a.startDate,a.endDate,u.name as owner from tbl_activity a join tbl_user u on a.owner = u.id where a.name like "%"#{name}"%" and a.id not in (select activityId from tbl_clue_activity_relation where clueId=#{clueId})
+    </select>
+
+    <select id="selectActivity" resultType="com.gmu.crm.workbench.domain.Activity">
+        select a.id,u.name as owner,a.name,a.startDate,a.endDate from tbl_activity a join tbl_user u on a.owner = u.id
+    </select>
+
+    <select id="selectActivityByName" resultType="com.gmu.crm.workbench.domain.Activity">
+        select a.id,a.name,a.startDate,a.endDate,u.name as owner from tbl_activity a join tbl_user u on a.owner = u.id where a.name like "%"#{name}"%"
     </select>
 </mapper>

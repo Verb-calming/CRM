@@ -24,6 +24,9 @@
         <url-pattern>*.jsp</url-pattern>
         <url-pattern>*.html</url-pattern>
     </filter-mapping>
+    <listener>
+        <listener-class>com.gmu.crm.web.listener.SystemInitListener</listener-class>
+    </listener>
     <servlet>
         <servlet-name>UserController</servlet-name>
         <servlet-class>com.gmu.crm.settings.web.controller.UserController</servlet-class>
@@ -49,5 +52,43 @@
         <url-pattern>/workbench/active/deleteRemark.do</url-pattern>
         <url-pattern>/workbench/active/saveRemark.do</url-pattern>
         <url-pattern>/workbench/active/updateRemark.do</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ClueController</servlet-name>
+        <servlet-class>com.gmu.crm.workbench.web.controller.ClueController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClueController</servlet-name>
+        <url-pattern>/workbench/clue/getUserList.do</url-pattern>
+        <url-pattern>/workbench/clue/save.do</url-pattern>
+        <url-pattern>/workbench/clue/select.do</url-pattern>
+        <url-pattern>/workbench/clue/detail.do</url-pattern>
+        <url-pattern>/workbench/clue/showActivityList.do</url-pattern>
+        <url-pattern>/workbench/clue/unbund.do</url-pattern>
+        <url-pattern>/workbench/clue/selectAllUnLinkedActivity.do</url-pattern>
+        <url-pattern>/workbench/clue/searchName.do</url-pattern>
+        <url-pattern>/workbench/clue/saveLinkedActivity.do</url-pattern>
+        <url-pattern>/workbench/clue/selectActivity.do</url-pattern>
+        <url-pattern>/workbench/clue/selectActivityByName.do</url-pattern>
+        <url-pattern>/workbench/clue/convert.do</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>TransactionController</servlet-name>
+        <servlet-class>com.gmu.crm.workbench.web.controller.TransactionController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TransactionController</servlet-name>
+        <url-pattern>/workbench/transaction/select.do</url-pattern>
+        <url-pattern>/workbench/transaction/create.do</url-pattern>
+        <url-pattern>/workbench/transaction/getCustomerName.do</url-pattern>
+        <url-pattern>/workbench/transaction/selectActivity.do</url-pattern>
+        <url-pattern>/workbench/transaction/selectActivityByName.do</url-pattern>
+        <url-pattern>/workbench/transaction/selectContacts.do</url-pattern>
+        <url-pattern>/workbench/transaction/selectContactsByName.do</url-pattern>
+        <url-pattern>/workbench/transaction/save.do</url-pattern>
+        <url-pattern>/workbench/transaction/detail.do</url-pattern>
+        <url-pattern>/workbench/transaction/getTranHistoryList.do</url-pattern>
+        <url-pattern>/workbench/transaction/changeStage.do</url-pattern>
+        <url-pattern>/workbench/transaction/getECharts.do</url-pattern>
     </servlet-mapping>
 </web-app>

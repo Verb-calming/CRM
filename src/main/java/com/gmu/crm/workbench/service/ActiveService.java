@@ -111,4 +111,20 @@ public class ActiveService {
         }
         return flag;
     }
+
+    public List<Activity> selectAllUnLinkedActivity(String clueId) {
+        return activeDao.selectAllUnLinkedActivity(clueId);
+    }
+
+    public List<Activity> searchName(Map<String, String> map) {
+        return activeDao.searchName(map);
+    }
+
+    public List<Activity> selectActivity() {
+        return activeDao.selectActivity();
+    }
+
+    public List<Activity> selectActivityByName(String name) {
+        return activeDao.selectActivityByName(name);
+    }
 }

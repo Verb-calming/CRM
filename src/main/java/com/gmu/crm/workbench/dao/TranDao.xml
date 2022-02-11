@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gmu.crm.workbench.dao.TranDao">
+    <select id="getTotalByCondition" resultType="java.lang.Integer">
+        select count(*) from tbl_tran t join tbl_user u on t.owner = u.id join tbl_customer cus on t.customerId = cus.id join tbl_contacts con on t.contactsId = con.id
+        <where>
+            <if test="owner!=null and owner!=''">
+                u.name like "%"#{owner}"%"
+            </if>
+            <if test="name!=null and name!=''">
+                and t.name like "%"#{name}"%"
+            </if>
+            <if test="stage!=null and stage!=''">
+                and t.stage like "%"#{stage}"%"
+            </if>
+            <if test="source!=null and source!=''">
+                and t.source like "%"#{source}"%"
+            </if>
+            <if test="customerId!=null and customerId!=''">
+                and cus.name like "%"#{customerName}"%"
+            </if>
+            <if test="contactsId!=null and contactsId!=''">
+                and con.fullname like "%"#{contactsName}"%"
+            </if>
+        </where>
+    </select>
+
+    <select id="getTranListByCondition" resultType="com.gmu.crm.workbench.domain.Tran">
+        select t.id,t.name,u.name as owner,t.stage,t.source,t.type,cus.name as customerId,con.fullname as contactsId from tbl_tran t join tbl_user u on t.owner = u.id join tbl_customer cus on t.customerId = cus.id join tbl_contacts con on t.contactsId = con.id
+        <where>
+            <if test="owner!=null and owner!=''">
+                u.name like "%"#{owner}"%"
+            </if>
+            <if test="name!=null and name!=''">
+                and t.name like "%"#{name}"%"
+            </if>
+            <if test="stage!=null and stage!=''">
+                and t.stage like "%"#{stage}"%"
+            </if>
+            <if test="source!=null and source!=''">
+                and t.source like "%"#{source}"%"
+            </if>
+            <if test="type!=null and type!=''">
+                and t.type like "%"#{type}"%"
+            </if>
+            <if test="customerId!=null and customerId!=''">
+                and cus.name like "%"#{customerName}"%"
+            </if>
+            <if test="contactsId!=null and contactsId!=''">
+                and con.fullname like "%"#{contactsName}"%"
+            </if>
+        </where>
+        order by t.createTime limit #{skipCount},#{pageSize}
+    </select>
+
+    <insert id="save">
+        insert into tbl_tran(
+            id,
+            owner,
+            money,
+            name,
+            expectedDate,
+            customerId,
+            stage,
+            type,
+            source,
+            activityId,
+            contactsId,
+            createBy,
+            createTime,
+            description,
+            contactSummary,
+            nextContactTime
+        ) values(
+            #{id},
+            #{owner},
+            #{money},
+            #{name},
+            #{expectedDate},
+            #{customerId},
+            #{stage},
+            #{type},
+            #{source},
+            #{activityId},
+            #{contactsId},
+            #{createBy},
+            #{createTime},
+            #{description},
+            #{contactSummary},
+            #{nextContactTime}
+        )
+    </insert>
+
+    <select id="getTranById" resultType="com.gmu.crm.workbench.domain.Tran">
+        select t.id,u.name as owner,t.money,t.name,t.expectedDate,cus.name as customerId,t.stage,t.type,t.source,a.name as activityId,
+        con.fullname as contactsId,t.createBy,t.createTime,t.editBy,t.editTime,t.description,t.contactSummary,t.nextContactTime
+        from tbl_tran t join tbl_user u on t.owner = u.id left join tbl_customer cus on t.customerId = cus.id left join tbl_activity a on t.activityId = a.id
+        left join tbl_contacts con on t.contactsId = con.id where t.id=#{id}
+    </select>
+
+    <update id="changeStage">
+        update tbl_tran set stage=#{stage},editBy=#{editBy},editTime=#{editTime} where id=#{id}
+    </update>
+
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(*) from tbl_tran
+    </select>
+
+    <select id="getECharts" resultType="java.util.Map">
+        select count(*) as value,stage as name from tbl_tran group by stage
+    </select>
+</mapper>

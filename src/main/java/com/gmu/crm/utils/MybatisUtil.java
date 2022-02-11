@@ -27,4 +27,11 @@ public class MybatisUtil {
         }
         return sqlSession;
     }
+    public static SqlSession getSqlSession(boolean flag) {
+        SqlSession sqlSession = null;
+        if (factory != null) {
+            sqlSession = factory.openSession(flag);
+        }
+        return sqlSession;
+    }
 }

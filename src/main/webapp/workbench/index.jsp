@@ -137,7 +137,7 @@
 						<span class="glyphicon glyphicon-user"></span> ${user.name} <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="../settings/index.html"><span class="glyphicon glyphicon-wrench"></span> 系统设置</a></li>
+						<li><a href="settings/index.html"><span class="glyphicon glyphicon-wrench"></span> 系统设置</a></li>
 						<li><a href="javascript:void(0)" data-toggle="modal" data-target="#myInformation"><span class="glyphicon glyphicon-file"></span> 我的资料</a></li>
 						<li><a href="javascript:void(0)" data-toggle="modal" data-target="#editPwdModal"><span class="glyphicon glyphicon-edit"></span> 修改密码</a></li>
 						<li><a href="javascript:void(0);" data-toggle="modal" data-target="#exitModal"><span class="glyphicon glyphicon-off"></span> 退出</a></li>
@@ -154,15 +154,15 @@
 		<div id="navigation" style="left: 0px; width: 18%; position: relative; height: 100%; overflow:auto;">
 		
 			<ul id="no1" class="nav nav-pills nav-stacked">
-				<li class="liClass"><a href="main/index.html" target="workareaFrame"><span class="glyphicon glyphicon-home"></span> 工作台</a></li>
+				<li class="liClass"><a href="workbench/main/index.html" target="workareaFrame"><span class="glyphicon glyphicon-home"></span> 工作台</a></li>
 				<li class="liClass"><a href="javascript:void(0);" target="workareaFrame"><span class="glyphicon glyphicon-tag"></span> 动态</a></li>
 				<li class="liClass"><a href="javascript:void(0);" target="workareaFrame"><span class="glyphicon glyphicon-time"></span> 审批</a></li>
 				<li class="liClass"><a href="javascript:void(0);" target="workareaFrame"><span class="glyphicon glyphicon-user"></span> 客户公海</a></li>
 				<li class="liClass"><a href="workbench/activity/index.jsp" target="workareaFrame"><span class="glyphicon glyphicon-play-circle"></span> 市场活动</a></li>
-				<li class="liClass"><a href="workbench/clue/index.html" target="workareaFrame"><span class="glyphicon glyphicon-search"></span> 线索（潜在客户）</a></li>
+				<li class="liClass"><a href="workbench/clue/index.jsp" target="workareaFrame"><span class="glyphicon glyphicon-search"></span> 线索（潜在客户）</a></li>
 				<li class="liClass"><a href="workbench/customer/index.html" target="workareaFrame"><span class="glyphicon glyphicon-user"></span> 客户</a></li>
 				<li class="liClass"><a href="workbench/contacts/index.html" target="workareaFrame"><span class="glyphicon glyphicon-earphone"></span> 联系人</a></li>
-				<li class="liClass"><a href="workbench/transaction/index.html" target="workareaFrame"><span class="glyphicon glyphicon-usd"></span> 交易（商机）</a></li>
+				<li class="liClass"><a href="workbench/transaction/index.jsp" target="workareaFrame"><span class="glyphicon glyphicon-usd"></span> 交易（商机）</a></li>
 				<li class="liClass"><a href="workbench/visit/index.html" target="workareaFrame"><span class="glyphicon glyphicon-phone-alt"></span> 售后回访</a></li>
 				<li class="liClass">
 					<a href="#no2" class="collapsed" data-toggle="collapse"><span class="glyphicon glyphicon-stats"></span> 统计图表</a>
@@ -170,7 +170,7 @@
 						<li class="liClass"><a href="workbench/chart/activity/index.html" target="workareaFrame">&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span> 市场活动统计图表</a></li>
 						<li class="liClass"><a href="workbench/chart/clue/index.html" target="workareaFrame">&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span> 线索统计图表</a></li>
 						<li class="liClass"><a href="workbench/chart/customerAndContacts/index.html" target="workareaFrame">&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span> 客户和联系人统计图表</a></li>
-						<li class="liClass"><a href="workbench/chart/transaction/index.html" target="workareaFrame">&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span> 交易统计图表</a></li>
+						<li class="liClass"><a href="workbench/chart/transaction/index.jsp" target="workareaFrame">&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span> 交易统计图表</a></li>
 					</ul>
 				</li>
 				<li class="liClass"><a href="javascript:void(0);" target="workareaFrame"><span class="glyphicon glyphicon-file"></span> 报表</a></li>

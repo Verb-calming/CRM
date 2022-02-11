@@ -19,4 +19,14 @@ public interface ActiveDao {
     int updateActive(Activity activity);
 
     Activity getActivityDetailById(String id);
+
+    List<Activity> showActivityList(String clueId);
+
+    List<Activity> selectAllUnLinkedActivity(String clueId);
+
+    List<Activity> searchName(Map<String, String> map);
+
+    List<Activity> selectActivity();
+
+    List<Activity> selectActivityByName(String name);
 }
